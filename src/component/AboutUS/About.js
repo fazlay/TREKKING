@@ -1,6 +1,5 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 const About = () => {
   return (
@@ -10,7 +9,7 @@ const About = () => {
           <span className='font-bold'> WHY </span>
           CHOOSE US
         </h1>
-        <p className=" font-light text-lg text-gray-600">
+        <p className=' font-light text-lg text-gray-600'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
           distinctio officiis rem repellat, iusto porro in dolore itaque eaque
           perferendis consequuntur mollitia modi nostrum laboriosam aliquam
@@ -32,56 +31,48 @@ const About = () => {
               alt=''
               src='https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/260/2018/05/03020437/Before-After-03.jpg'
             />
-            <p className='legend'>After</p>
           </div>
           <div>
             <img
               alt=''
               src='https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/260/2018/05/03020436/Before-After-04.jpg'
             />
-            <p className='legend'>After</p>
           </div>
           <div>
             <img
               alt=''
               src='https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/260/2018/05/03020438/Before-After-01.jpg'
             />
-            <p className='legend'>After</p>
           </div>
           <div>
             <img
               alt=''
               src='https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/260/2018/05/03020437/Before-After-02.jpg'
             />
-            <p className='legend'>Before After</p>
           </div>
           <div>
             <img
               alt=''
               src='https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/260/2018/05/03020437/Before-After-03.jpg'
             />
-            <p className='legend'>After</p>
           </div>
           <div>
             <img
               alt=''
               src='https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/260/2018/05/03020436/Before-After-04.jpg'
             />
-            <p className='legend'></p>
           </div>
           <div>
             <img
               alt=''
               src='https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/260/2018/05/03020438/Before-After-01.jpg'
             />
-            <p className='legend'></p>
           </div>
           <div>
             <img
               alt=''
               src='https://wp02-media.cdn.ihealthspot.com/wp-content/uploads/sites/260/2018/05/03020437/Before-After-02.jpg'
             />
-            <p className='legend'></p>
           </div>
         </Carousel>
       </div>

@@ -1,11 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../hook/useAuth';
 import { useForm } from 'react-hook-form';
 import './ConfirmBooking.css';
 
 const ConfirmBooking = () => {
+  const history = useHistory();
   const { user } = useAuth();
   const { id } = useParams();
   const [item, setItem] = useState({});
@@ -26,10 +27,16 @@ const ConfirmBooking = () => {
   const onSubmit = (data) => {
     data.productId = id;
     data.status = 'pending';
-    console.log(data);
-    axios
-      .post('http://localhost:5000/orders', data)
-      .then((result) => console.log(result));
+    const proceed = window.confirm('Are you sure, you want to Purchase?');
+    if (proceed) {
+      axios.post('http://localhost:5000/orders', data).then((result) => {
+        console.log(result);
+        if (result.data.acknowledged) {
+          alert('Congratulation Your Purchase is Successful!!');
+          history.push('/home');
+        }
+      });
+    }
   };
 
   return (
@@ -64,11 +71,7 @@ const ConfirmBooking = () => {
               />
             </label>
             <label>Shipping Address</label>
-            {/* <input
-              className='text-gray-500'
-              defaultValue={id}
-              {...register('orderId')}
-            /> */}
+
             <input
               className='text-gray-500'
               defaultValue='Dhaka'

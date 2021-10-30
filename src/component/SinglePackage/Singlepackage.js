@@ -3,24 +3,23 @@ import { Link } from 'react-router-dom';
 
 const Singlepackage = (props) => {
  
-  const { _id } = props.singlePackage;
+  const { _id ,name,Description,cost ,img } = props.singlePackage;
   return (
     <div>
       <div class='bg-white shadow-lg cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out'>
         <div class=''>
-          <img src='https://picsum.photos/400/300' alt='' class='rounded-t' />
+          <img src={img} alt='' class='rounded-t' />
         </div>
 
         <div class='p-4'>
-          <h2 class='text-2xl uppercase'>Item a</h2>
-          <p class='font-light text-gray-500 text-lg my-2'>29,99 &euro;</p>
+          <h2 class='text-2xl uppercase'>{name}</h2>
+          <p class='font-light text-gray-500 text-lg my-2'> &#36; {cost}</p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt
+          {Description}
           </p>
           <Link to={`/confirmbooking/${_id}`}>
-            <button class='block mx-auto px-20 bg-gray-300 py-2 px-2 text-gray-600 text-center rounded shadow-lg uppercase font-light mt-6 hover:bg-gray-400 hover:text-white duration-300 ease-in-out'>
-              Add to cart
+            <button class='block mx-auto px-20 bg-gray-300 py-2  text-gray-600 text-center rounded shadow-lg uppercase font-light mt-6 hover:bg-gray-400 hover:text-white duration-300 ease-in-out'>
+             BOOK NOW
             </button>
           </Link>
         </div>

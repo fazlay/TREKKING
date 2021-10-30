@@ -7,7 +7,7 @@ const AllOrders = () => {
         fetch('http://localhost:5000/allorders')
         .then(res=>res.json())
         .then(data=>setAllorders(data))
-    },[])
+    },[allOrders])
     return (
         <>
             <table class='min-w-full table-auto'>
@@ -28,6 +28,9 @@ const AllOrders = () => {
 
             <th class='px-16 py-2'>
               <span class='text-gray-300'>Status</span>
+            </th>
+            <th class='px-16 py-2'>
+              <span class='text-gray-300'>Delete</span>
             </th>
           </tr>
         </thead>
