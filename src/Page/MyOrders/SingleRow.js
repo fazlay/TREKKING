@@ -31,21 +31,21 @@ const SingleRow = (props) => {
     return (
         <>
            
-           <tr class='bg-white border-4 border-gray-200'>
+           <tr className='bg-white border-4 border-gray-200'>
         
             <td>
-              <span class='text-center ml-2 font-semibold'>{name}</span>
+              <span className='text-center ml-2 font-semibold'>{name}</span>
             </td>
-            <td class='px-16 py-2'>
+            <td className='px-16 py-2'>
               <h1>{orderItem?.name}</h1>
             </td>
-            <td class='px-16 py-2'>
+            <td className='px-16 py-2'>
               <span>$ {orderItem?.cost}</span>
             </td>
-            <td class='px-16 py-2'>
+            <td className='px-16 py-2'>
               <span>{status}</span>
             </td>
-            <td class='px-16 py-2'>
+            <td className='px-16 py-2'>
           <button
             onClick={() => handleStatusDelete(_id)}
             className='px-4 py-2 bg-red-500 '

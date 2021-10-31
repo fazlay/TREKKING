@@ -6,19 +6,19 @@ const Singlepackage = (props) => {
   const { _id ,name,Description,cost ,img } = props.singlePackage;
   return (
     <div>
-      <div class='bg-white shadow-lg cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out'>
-        <div class=''>
-          <img src={img} alt='' class='rounded-t' />
+      <div className='bg-white shadow-lg cursor-pointer rounded transform hover:scale-105 duration-300 ease-in-out'>
+        <div className=''>
+          <img src={img} alt='' className='rounded-t' />
         </div>
 
-        <div class='p-4'>
-          <h2 class='text-2xl uppercase'>{name}</h2>
-          <p class='font-light text-gray-500 text-lg my-2'> &#36; {cost}</p>
+        <div className='p-4'>
+          <h2 className='text-2xl uppercase'>{name}</h2>
+          <p className='font-light text-gray-500 text-lg my-2'> &#36; {cost}</p>
           <p>
           {Description.slice(0, 100)}
           </p>
           <Link to={`/confirmbooking/${_id}`}>
-            <button class='block mx-auto px-16 bg-gray-300 py-2  text-gray-600 text-center rounded shadow-lg uppercase font-light mt-6 hover:bg-gray-400 hover:text-white duration-300 ease-in-out'>
+            <button className='block mx-auto px-16 bg-gray-300 py-2  text-gray-600 text-center rounded shadow-lg uppercase font-light mt-6 hover:bg-gray-400 hover:text-white duration-300 ease-in-out'>
              BOOK NOW
             </button>
           </Link>
