@@ -4,14 +4,13 @@ import Singlepackage from '../SinglePackage/Singlepackage';
 const Package = () => {
   const [packages, setPackages] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/packages')
+    fetch('https://shrouded-thicket-18720.herokuapp.com/packages')
       .then((res) => res.json())
       .then((data) => setPackages(data));
   }, []);
   return (
-    <div className='container mx-auto pt-20 px-20 bottom-border '>
-      
-      <div className='grid grid-cols-4 gap-4'>
+    <div className='container mx-auto pt-20 md:px-20 px-5'>
+      <div className='grid grid-cols-1 md:grid-cols-4 gap-4'>
         <div className=' flex flex-wrap uppercase justify-center content-center'>
           <h1 className='text-5xl font-extralight text-gray-600'>
             <span className='font-bold'> latest </span>

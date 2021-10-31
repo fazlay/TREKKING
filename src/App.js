@@ -1,4 +1,3 @@
-
 import './App.css';
 import Header from './component/Header/Header';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -10,6 +9,7 @@ import Login from './Page/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './component/PrivetRoute/PrivetRoute';
 import ConfirmBooking from './Page/ConfirmBooking/ConfirmBooking';
+import NotFound from './component/NotFound/Notfound'
 
 function App() {
   return (
@@ -35,6 +35,9 @@ function App() {
             </PrivateRoute>
             <Route path='/login'>
               <Login></Login>
+            </Route>
+            <Route path='/*'>
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>

@@ -10,7 +10,7 @@ const ConfirmBooking = () => {
   const { user } = useAuth();
   const { id } = useParams();
   const [item, setItem] = useState({});
-  const url = `http://localhost:5000/packages/${id}`;
+  const url = `https://shrouded-thicket-18720.herokuapp.com/packages/${id}`;
 
   useEffect(() => {
     fetch(url)
@@ -29,8 +29,8 @@ const ConfirmBooking = () => {
     data.status = 'pending';
     const proceed = window.confirm('Are you sure, you want to Purchase?');
     if (proceed) {
-      axios.post('http://localhost:5000/orders', data).then((result) => {
-        console.log(result);
+      axios.post('https://shrouded-thicket-18720.herokuapp.com/orders', data).then((result) => {
+       
         if (result.data.acknowledged) {
           alert('Congratulation Your Purchase is Successful!!');
           history.push('/home');
@@ -40,8 +40,8 @@ const ConfirmBooking = () => {
   };
 
   return (
-    <div className='container px-20'>
-      <div className='grid md:grid-cols-3 gap-3 py-10'>
+    <div className='container md:px-20 px-4'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-3 py-10'>
         <div className='left col-span-2 bg-gray-400'>
           <h1 className='text-2xl font-medium text-left'>{item?.name}</h1>
           <h1 className='text-2xl font-thin text-left'>{item?.place}</h1>
@@ -70,7 +70,7 @@ const ConfirmBooking = () => {
                 {...register('email')}
               />
             </label>
-            <label>Shipping Address</label>
+            <label> Address</label>
 
             <input
               className='text-gray-500'

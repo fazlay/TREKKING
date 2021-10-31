@@ -9,7 +9,7 @@ const MyOrders = () => {
     const userEmail = [user.email];
     console.log(userEmail);
 
-    fetch('http://localhost:5000/orders/user', {
+    fetch('https://shrouded-thicket-18720.herokuapp.com/orders/user', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -18,13 +18,13 @@ const MyOrders = () => {
     })
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
-  }, []);
+  }, [myOrders]);
   return (
-    <div>
-      <table class='min-w-full table-auto'>
+    <div className="py-14">
+      <h1 className=" py-5 font-bold text-3xl text-black" >Here Is All Your Orders </h1>
+      <table class='min-w-1/2 mx-auto table-auto'>
         <thead class='justify-between'>
           <tr class='bg-gray-800'>
-          
             <th class='px-16 py-2'>
               <span class='text-gray-300'>Name</span>
             </th>
@@ -38,12 +38,15 @@ const MyOrders = () => {
             <th class='px-16 py-2'>
               <span class='text-gray-300'>Status</span>
             </th>
+            <th class='px-16 py-2'>
+              <span class='text-gray-300'>Delete</span>
+            </th>
           </tr>
         </thead>
         <tbody class='bg-gray-200'>
-          {myOrders.map((myOrder) => (<SingleRow myOrder={myOrder}></SingleRow>
+          {myOrders.map((myOrder) => (
+            <SingleRow myOrder={myOrder}></SingleRow>
           ))}
-          
         </tbody>
       </table>
     </div>
